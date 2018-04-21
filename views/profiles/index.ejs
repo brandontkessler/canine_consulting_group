@@ -1,0 +1,15 @@
+<% include ../partials/header %>
+
+	<h1>Welcome to the profile page <%= currentUser.name %></h1>
+
+	<a href="/profile/<%= currentUser._id %>/pet-profiles/create">Build a Pet Profile</a>
+
+	<ul>
+		<% if(user){ %> 
+			<% user.pets.forEach(function(pet){ %>
+				<li><a href="/profile/<%= currentUser._id %>/pet-profiles/<%= pet.id %>"><%= pet.name %></a></li>
+			<% }) %>
+		<% } %>	
+	</ul>
+
+<% include ../partials/footer %>

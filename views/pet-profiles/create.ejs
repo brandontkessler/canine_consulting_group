@@ -1,0 +1,37 @@
+
+<% include ../partials/header %>
+
+<div class="container">
+	<form action="/profile/<%= currentUser._id %>/pet-profiles" method="post">
+		<div class="form-group">
+			<label>Name</label>
+			<input class="form-control" type="string" name="pet[name]" autofocus required>
+		</div>
+		<div class="form-group">
+			<label>Type of Pet</label>
+			<select class="form-control" name="pet[petType]" required>
+				<option value="" disabled selected>Pet Type</option>
+				<option value="dog">Dog</option>
+				<option value="cat">Cat</option>
+				<option value="hamster">Hamster</option>
+			</select>
+		</div>
+		<div class="form-group">
+			<label>Age</label>
+			<input class="form-control" type="number" name="pet[age]" required>
+		</div>
+		<div class="form-group">
+			<label>Birthdate</label>
+			<input class="form-control" type="date" name="pet[birthdate]" placeholder="birthdate" required>
+		</div>
+		<div class="form-group">
+			<label>Gender</label>
+			<input type="radio" name="pet[gender]" value="male"> Male
+			<input type="radio" name="pet[gender]" value="female"> Female
+		</div>
+		<button>Submit</button>
+	</form>
+</div>
+
+
+<% include ../partials/footer %>

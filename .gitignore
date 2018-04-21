@@ -1,0 +1,7 @@
+node_modules/
+
+#secret variables
+.env
+
+#testing notes
+notes.md
