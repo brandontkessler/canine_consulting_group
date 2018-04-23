@@ -1,0 +1,1 @@
+This folder is used as a temporary storage for images before they are uploaded to imgur and then removed.

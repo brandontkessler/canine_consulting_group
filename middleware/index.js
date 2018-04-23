@@ -28,23 +28,18 @@ middlewareObject.isProfileOwner = function(req, res, next){
 	res.redirect("/profile/" + req.user._id);
 }
 
-// middlewareObject.isPetOwner = function(req, res, next){
-// 	Pet.findById(req.params.petId, function(err, foundPet){
-// 		console.log(foundPet.owner.id);
-// 		if(err){
-// 			console.log(err);
-// 			res.redirect("/profile/" + req.user.id);
-// 		} else {
-// 			if(foundPet.owner.id.equals(req.user._id)){
-// 				return next();
-// 			};
-// 			console.log("Something went wrong");
-// 			res.redirect("/profile/" + req.user._id);
-// 		}
-// 	});
-// 	console.log("That pet doesn't exist");
-// 	res.redirect("/profile/" + req.user.id);
-// }
-
+middlewareObject.isPetOwner = function(req, res, next){
+	Pet.findById(req.params.petId, function(err, foundPet){
+		if(err){
+			console.log(err);
+			res.redirect("/profile/" + req.user._id);
+		} else if(foundPet.owner.id.equals(req.user._id)){
+			return next()
+		} else {
+			console.log("something went wrong");
+			res.redirect("/profile/" + req.user._id);
+		}
+	});
+}
 
 module.exports = middlewareObject;
