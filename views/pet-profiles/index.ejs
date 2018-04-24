@@ -1,8 +1,23 @@
 <% include ../partials/header %>
 	
-	<a href="/profile/<%= currentUser._id %>">Back to Hooman Paws</a>
-	<h1>Pet Profile for <%= pet.name %></h1>
-	<img src="<%= pet.petImage[0] %>">
+	<div class="container-fluid">
+		<div class="jumbotron">
+			<div class="container">
+				<h1>Cub Paws </h1>
+			</div>
+		</div>
+
+		<div class="container">
+			<a href="/profile/<%= currentUser._id %>">Back to Hooman Paws</a>
+			<hr>
+			<h4>Hi! My name is, <strong><%= pet.name %></strong></h4>
+			<img class="pet-profile-pic" src="<%= pet.petImage[0] %>">
+			
+		</div>
+
+		</div>
+	</div>
+
 
 
 <% include ../partials/footer %>

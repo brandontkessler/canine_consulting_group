@@ -1,0 +1,28 @@
+.pet-btn {
+	border: 1px solid #eee;
+	border-radius: 20px;
+	margin-top: 20px;
+}
+
+.pet-container {
+	width: 80%;
+	margin: 0px auto;
+}
+
+
+.pet-images {
+	float: left;
+	margin-left: 5px;
+}
+
+.pet-image-thumbnail {
+	height: 100px;
+	width: 100px;
+	border-radius: 50px;
+}
+
+.pet-profile-pic {
+	height: 200px;
+	width: 200px;
+	border-radius: 10px;
+}

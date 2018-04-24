@@ -1,15 +1,31 @@
 <% include ../partials/header %>
 
-	<h1>Welcome to the profile page <%= currentUser.name %></h1>
+	<div class="container-fluid">
+		<div class="jumbotron">
+			<div class="container">
+				<h1>Hooman Paws</h1>	
+			</div>
+		</div>
 
-	<a href="/profile/<%= currentUser._id %>/pet-profiles/create">Build a Pet Profile</a>
+		<div class="container">
+			<div class="user-info">
+				<h3><strong>Hello, <%= user.name %></strong></h3>
+			</div>
 
-	<ul>
-		<% if(user){ %> 
-			<% user.pets.forEach(function(pet){ %>
-				<li><a href="/profile/<%= currentUser._id %>/pet-profiles/<%= pet.id %>"><%= pet.name %></a></li>
-			<% }) %>
-		<% } %>	
-	</ul>
+			<a class="btn pet-btn" href="/profile/<%= currentUser._id %>/pet-profiles/create">Create a New <i class="fas fa-paw"></i></a>
+			
+			<h2>Your Pets</h2>
+			<div class="pet-container">
+				<% if(user){ %> 
+					<% user.pets.forEach(function(pet){ %>
+						<a class="pet-images" href="/profile/<%= currentUser._id %>/pet-profiles/<%= pet.id %>">
+							<img class="pet-image-thumbnail" src="<%= pet.petImage[0] %>">
+						</a>
+					<% }) %>
+				<% } %>	
+			</div>
+		</div>
+	</div>
+
 
 <% include ../partials/footer %>

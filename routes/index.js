@@ -49,4 +49,10 @@ router.get("/logout", function(req, res){
 });
 
 
+// Cub School
+router.get("/cub-school", function(req, res){
+	res.render("cub-school");
+});
+
+
 module.exports = router;
