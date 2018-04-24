@@ -69,6 +69,7 @@ nav a {
 	float:left;
 	overflow: hidden;
 	min-width: 25%;
+	cursor: pointer;
 }
 
 .item img {
