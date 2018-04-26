@@ -8,12 +8,16 @@
 			<input class="form-control" type="string" name="pet[name]" autofocus required>
 		</div>
 		<div class="form-group">
-			<label>Type of Pet</label>
-			<select class="form-control" name="pet[petType]" required>
-				<option value="" disabled selected>Pet Type</option>
-				<option value="dog">Dog</option>
-				<option value="cat">Cat</option>
-				<option value="hamster">Hamster</option>
+			<label>Nicknames (Optional)</label>
+			<input class="form-control" type="string" name="pet[nicknames]" autofocus>
+		</div>
+		<div class="form-group">
+			<label>Breed</label>
+			<select class="form-control" name="pet[breed]" required>
+				<option value="" disabled selected>Breed</option>
+				<option value="German Shepherd">German Shepherd</option>
+				<option value="Doberman">Doberman</option>
+				<option value="Cuban">Cuban</option>
 			</select>
 		</div>
 		<div class="form-group">
@@ -21,13 +25,12 @@
 			<input class="form-control" type="number" name="pet[age]" required>
 		</div>
 		<div class="form-group">
-			<label>Birthdate</label>
+			<label>Birth (or Adoption) Date</label>
 			<input class="form-control" type="date" name="pet[birthdate]" placeholder="birthdate" required>
 		</div>
 		<div class="form-group">
-			<label>Gender</label>
-			<input type="radio" name="pet[gender]" value="male" required> Male
-			<input type="radio" name="pet[gender]" value="female" required> Female
+			<label>Birth (or Adoption) Place</label>
+			<input class="form-control" type="string" name="pet[birthPlace]" placeholder="birth or adoption location" required>
 		</div>
 		<div class="form-group">
 			<input type="file" name="petImage" required>

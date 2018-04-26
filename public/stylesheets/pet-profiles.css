@@ -3,6 +3,12 @@ body{
 	background: url("https://i.imgur.com/nUh39G5.jpg") top left repeat;
 }
 
+.navbar {
+	margin-bottom: 0;
+	background-color: rgb(0, 0, 0, 0);
+	border: none;
+}
+
 #pet-profile-header {
 	text-align: center;
 	position: relative;
@@ -10,6 +16,7 @@ body{
 
 #pet-profile-bone {
 	width: 80%;
+	margin-bottom: 10px;
 }
 
 .pet-profile-border{
@@ -34,9 +41,25 @@ body{
 	border-radius: 50%;
 }
 
+.pet-profile-info {
+	list-style: none;
+	margin-bottom: 0;
+	padding-top: 5%;
+	font-size: 3.5vw;
+	font-family: Rancho, cursive;
+	font-weight: bold;
+}
+
+.pet-profile-info li {
+	margin-top: 10px;
+}
+
+.pet-profile-info li p {
+	font-size: 2.5vw;
+}
+
 .fun-facts {
 	width: 80%;
-	background-color: gray;
 	margin: 0 auto;
 }
 

@@ -1,0 +1,91 @@
+<% include ../partials/pet-profile-view-header %>
+	
+	
+	<div class="container-fluid">
+		<div class="container">
+			<div id="pet-profile-header">
+				<img id="pet-profile-bone" src="https://i.imgur.com/zCor6Um.png">
+				<h1 class="pet-profile-name"><%= pet.name %></h1>
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="pet-profile-border">
+				<div class="row">
+					<div class="col-xs-6">
+						<img class="pet-profile-pic" src="<%= pet.petImage[0] %>">
+					</div>
+					<div class="col-xs-6">
+						<ul class="pet-profile-info">
+							<% if( pet.nicknames ){ %>
+								<li> Nickname(s):
+									<p><%= pet.nicknames %></p>
+								</li>
+							<% } %>
+							<li>Birth (or Adoption) Date:
+								<p><%= pet.birthdate %></p>
+							</li>
+							<li>Age:
+								<p><%= pet.age %></p>
+							</li>
+							<li>Birth (or Adoption) Place:
+								<p><%= pet.birthPlace %></p>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="pet-profile-border">
+				<div class="fun-facts">
+					<% if( pet.funFacts.favoriteToys || pet.funFacts.favoriteTreats || pet.funFacts.bestFriends || pet.funFacts.talents || pet.funFacts.leastFavoriteThing || pet.funFacts.iLoseMyMindWhen) { %>
+						<h1>Fun Facts</h1>
+						<ul>
+							<% if(pet.funFacts.favoriteToys) { %>
+								<li>
+									<h4>Favorite Toys</h4>
+									<p><%= pet.funFacts.favoriteToys %></p>
+								</li>
+							<% } %>
+							<% if(pet.funFacts.favoriteTreats) { %>
+								<li>
+									<h4>Favorite Treats</h4>
+									<p><%= pet.funFacts.favoriteTreats %></p>
+								</li>
+							<% } %>
+							<% if(pet.funFacts.bestFriends) { %>
+								<li>
+									<h4>Best Friends</h4>
+									<p><%= pet.funFacts.bestFriends %></p>
+								</li>
+							<% } %>
+							<% if(pet.funFacts.talents) { %>
+								<li>
+									<h4>Talents</h4>
+									<p><%= pet.funFacts.talents %></p>
+								</li>
+							<% } %>
+							<% if(pet.funFacts.leastFavoriteThing) { %>
+								<li>
+									<h4>Least Favorite Thing</h4>
+									<p><%= pet.funFacts.leastFavoriteThing %></p>
+								</li>
+							<% } %>
+							<% if(pet.funFacts.iLoseMyMindWhen) { %>
+								<li>
+									<h4>I lose my mind when...</h4>
+									<p><%= pet.funFacts.iLoseMyMindWhen %></p>
+								</li>
+							<% } %>
+						</ul>
+					<% } else { %>
+						<h2><%= pet.name %> Doesn't have fun facts to share!</h2>
+					<% } %>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+
+
+<% include ../partials/footer %>

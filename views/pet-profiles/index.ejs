@@ -1,10 +1,10 @@
 <% include ../partials/pet-profile-header %>
 	
-	<a href="/profile/<%= currentUser._id %>">Back to Hooman Paws</a>
+	
 	<div class="container-fluid">
 		<div class="container">
 			<div id="pet-profile-header">
-				<img id="pet-profile-bone" src="https://i.imgur.com/qkgQLjc.png">
+				<img id="pet-profile-bone" src="https://i.imgur.com/zCor6Um.png">
 				<h1 class="pet-profile-name"><%= pet.name %></h1>
 			</div>
 		</div>
@@ -16,11 +16,91 @@
 						<img class="pet-profile-pic" src="<%= pet.petImage[0] %>">
 					</div>
 					<div class="col-xs-6">
-						
+						<ul class="pet-profile-info">
+							<% if( pet.nicknames ){ %>
+								<li> Nickname(s):
+									<p><%= pet.nicknames %></p>
+								</li>
+							<% } %>
+							<li>Birth (or Adoption) Date:
+								<p><%= pet.birthdate %></p>
+							</li>
+							<li>Age:
+								<p><%= pet.age %></p>
+							</li>
+							<li>Birth (or Adoption) Place:
+								<p><%= pet.birthPlace %></p>
+							</li>
+						</ul>
 					</div>
 				</div>
+			</div>
+			<div class="pet-profile-border">
 				<div class="fun-facts">
-					<h1>Fun Facts</h1>
+					<form action="/profile/<%= currentUser._id %>/pet-profiles/<%= pet.id %>?_method=PUT" method="post">
+						<h1>Fun Facts</h1>
+						<div class="form-group">
+							<label>Favorite Toys</label>
+							<input class="form-control" type="string" name="pet[funFacts][favoriteToys]" 
+								<% if(pet.funFacts.favoriteToys){ %>
+									value="<%= pet.funFacts.favoriteToys %>"
+								<% } else { %>
+									placeholder="What are <%= pet.name %>'s favorite toys?"
+								<% } %>
+							/>
+						</div>
+						<div class="form-group">
+							<label>Favorite Treats</label>
+							<input class="form-control" type="string" name="pet[funFacts][favoriteTreats]" 
+								<% if(pet.funFacts.favoriteTreats){ %>
+									value="<%= pet.funFacts.favoriteTreats %>"
+								<% } else { %>
+									placeholder="What are <%= pet.name %>'s favorite treats?"
+								<% } %>
+							/>
+						</div>
+						<div class="form-group">
+							<label>Best Friends</label>
+							<input class="form-control" type="string" name="pet[funFacts][bestFriends]" 
+								<% if(pet.funFacts.bestFriends){ %>
+									value="<%= pet.funFacts.bestFriends %>"
+								<% } else { %>
+									placeholder="Who are <%= pet.name %>'s best friends?"
+								<% } %>
+							/>
+						</div>
+						<div class="form-group">
+							<label>Talents</label>
+							<input class="form-control" type="string" name="pet[funFacts][talents]" 
+								<% if(pet.funFacts.talents){ %>
+									value="<%= pet.funFacts.talents %>"
+								<% } else { %>
+									placeholder="What are <%= pet.name %>'s special talents?"
+								<% } %>
+							/>
+						</div>
+						<div class="form-group">
+							<label>Least Favorite Thing</label>
+							<input class="form-control" type="string" name="pet[funFacts][leastFavoriteThing]" 
+								<% if(pet.funFacts.leastFavoriteThing){ %>
+									value="<%= pet.funFacts.leastFavoriteThing %>"
+								<% } else { %>
+									placeholder="What is <%= pet.name %>'s least favorite thing?"
+								<% } %>
+							/>
+						</div>
+						<div class="form-group">
+							<label>I lose my mind when...</label>
+							<input class="form-control" type="string" name="pet[funFacts][iLoseMyMindWhen]" 
+								<% if(pet.funFacts.iLoseMyMindWhen){ %>
+									value="<%= pet.funFacts.iLoseMyMindWhen %>"
+								<% } else { %>
+									placeholder="What drives <%= pet.name %> crazy?"
+								<% } %>
+							/>
+						</div>
+						<button>Save</button>
+					</form>
 				</div>
 			</div>
 		</div>

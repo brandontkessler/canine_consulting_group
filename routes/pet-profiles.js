@@ -66,10 +66,11 @@ router.post("/profile/:id/pet-profiles", middleware.isLoggedIn, middleware.isPro
 							let petInfo = req.body.pet;
 							let newPet = new Pet({
 								name: petInfo.name,
-								petType: petInfo.petType,
+								nicknames: petInfo.nicknames,
+								breed: petInfo.breed,
 								age: petInfo.age,
 								birthdate: petInfo.birthdate,
-								gender: petInfo.gender,
+								birthPlace: petInfo.birthPlace,
 								petImage: petImageURL
 							});
 							Pet.create(newPet, function(err, pet){
@@ -101,13 +102,35 @@ router.get("/profile/:id/pet-profiles/:petId", middleware.isLoggedIn, middleware
 	Pet.findById(req.params.petId, function(err, foundPet){
 		if(err){
 			console.log(err);
-			res.redirect("/profile/" + req.user._id)
+			res.redirect("/profile/" + req.user._id);
 		} else {
 			res.render("pet-profiles", {pet: foundPet});
 		}
 	});
 });
 
+// Post Fun Facts to Database
+router.put("/profile/:id/pet-profiles/:petId", middleware.isLoggedIn, middleware.isProfileOwner, middleware.isPetOwner, function(req, res){
+	Pet.findByIdAndUpdate(req.params.petId, req.body.pet, function(err, updatedPet){
+		if(err){
+			console.log(err);
+			res.redirect("/profile/" + req.user._id);
+		} else {
+			res.redirect("/profile/" + req.user._id + "/pet-profiles/" + req.params.petId);
+		}
+	});
+});
 
+// Get Public View of Pet Profile
+router.get("/pet-profiles/:petId/view", function(req, res){
+	Pet.findById(req.params.petId, function(err, foundPet){
+		if(err){
+			console.log(err);
+			res.redirect("/");
+		} else {
+			res.render("pet-profiles/pet-view", {pet: foundPet});
+		}
+	});
+});
 
 module.exports = router;

@@ -4,6 +4,7 @@ const 	express = require("express"),
 		mongoose = require("mongoose"),
 		passport = require("passport"),
 		LocalStrategy = require("passport-local"),
+		methodOverride = require("method-override"),
 		User = require("./models/user");
 
 require("dotenv").config();
@@ -17,6 +18,7 @@ mongoose.connect("mongodb://localhost/canine");
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
+app.use(methodOverride("_method"));
 
 
 // Passport Configuration
