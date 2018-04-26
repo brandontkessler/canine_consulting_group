@@ -19,6 +19,7 @@ nav a {
 	font-size: 2em;
 }
 
+/* HEADER */
 .jumbotron {
 	height: 60vh;
 	background-image: url('https://i.imgur.com/uJVRYRK.jpg');
@@ -48,6 +49,7 @@ nav a {
 	color: white;
 }
 
+/* MID SECTION */
 .home-label {
 	text-align: center;
 	margin-bottom: 20px;
@@ -59,6 +61,7 @@ nav a {
 	margin: 0;
 }
 
+/* ITEM NAVIGATION */
 .item-container {
 	display: flex;
 	justify-content: center;
@@ -72,9 +75,13 @@ nav a {
 	cursor: pointer;
 }
 
-.item img {
+.item .item-image {
 	min-width: 100%;
 	height: 500px;
+}
+
+.item3 .item-image{
+	-webkit-filter: brightness(145%);
 }
 
 .item h3 {
@@ -97,44 +104,47 @@ nav a {
 	font-size: 34px;
 	border-radius: 50%;
 	color: #000000;
-	background: #ffffff;
-	width: 60px;
-	height: 60px;
+	border: solid 4px white;
+	width: 120px;
+	height: 120px;
 	text-align: center;
 	line-height: 60px;
 }
 
-.blue {
-	background-color: #809fff;
-}
-.blue a {
-	color: #809fff;
+
+.item a img{
+	position: absolute;
+	top: 15%;
+	left: 15%;
+	height: 80px;
+	width: 80px;
 }
 
-.green {
-	background-color: #339933;
-}
-.green a {
-	color: #339933;
-}
-
-.red {
-	background-color: #b30000;
-}
-.red a {
-	color: #b30000;
+/* ITEM COLORING */
+/* CUB SCHOOL */
+.item1 {
+	background-color: white;
 }
 
-.yellow {
-	background-color: #cccc00;
-}
-.yellow a {
-	color: #cccc00;
+/* HEALTH AND WELLNESS */
+.item2 {
+	background-color: white;
 }
 
-.item:hover img {
-	opacity: 0.3;
-	filter: grayscale(100%);
+/* FOOD */
+.item3 {
+	background-color: white;
+}
+
+/* CUB SOCIAL */
+.item4 {
+	background-color: white;
+}
+
+
+/* ITEM TRANSITION AND TRANFORMATIONS */
+.item:hover .item-image {
+	opacity: 0.5;
 }
 
 .item * {

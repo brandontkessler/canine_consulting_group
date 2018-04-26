@@ -1,0 +1,45 @@
+/* PET PROFILE */
+body{
+	background: url("https://i.imgur.com/nUh39G5.jpg") top left repeat;
+}
+
+#pet-profile-header {
+	text-align: center;
+	position: relative;
+}
+
+#pet-profile-bone {
+	width: 80%;
+}
+
+.pet-profile-border{
+	background-color: rgb(255, 255, 255, 0.7);
+	border-radius: 15px;
+
+}
+
+.pet-profile-name {
+	position: absolute;
+	top: 45%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 9vw;
+	font-family: 'Gochi Hand', cursive;
+}
+
+.pet-profile-pic {
+	object-fit: cover;
+	margin: 5%;
+	width: 80%;
+	border-radius: 50%;
+}
+
+.fun-facts {
+	width: 80%;
+	background-color: gray;
+	margin: 0 auto;
+}
+
+.fun-facts h1 {
+	text-align: center;
+}

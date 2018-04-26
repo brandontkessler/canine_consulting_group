@@ -1,21 +1,30 @@
-<% include ../partials/header %>
+<% include ../partials/pet-profile-header %>
 	
+	<a href="/profile/<%= currentUser._id %>">Back to Hooman Paws</a>
 	<div class="container-fluid">
-		<div class="jumbotron">
-			<div class="container">
-				<h1>Cub Paws </h1>
+		<div class="container">
+			<div id="pet-profile-header">
+				<img id="pet-profile-bone" src="https://i.imgur.com/qkgQLjc.png">
+				<h1 class="pet-profile-name"><%= pet.name %></h1>
 			</div>
 		</div>
 
 		<div class="container">
-			<a href="/profile/<%= currentUser._id %>">Back to Hooman Paws</a>
-			<hr>
-			<h4>Hi! My name is, <strong><%= pet.name %></strong></h4>
-			<img class="pet-profile-pic" src="<%= pet.petImage[0] %>">
-			
+			<div class="pet-profile-border">
+				<div class="row">
+					<div class="col-xs-6">
+						<img class="pet-profile-pic" src="<%= pet.petImage[0] %>">
+					</div>
+					<div class="col-xs-6">
+						
+					</div>
+				</div>
+				<div class="fun-facts">
+					<h1>Fun Facts</h1>
+				</div>
+			</div>
 		</div>
 
-		</div>
 	</div>
 
 
