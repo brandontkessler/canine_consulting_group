@@ -12,7 +12,8 @@ require("dotenv").config();
 // Required Routes
 const	indexRoutes = require("./routes/index"),
 		profileRoutes = require("./routes/profiles"),
-		petProfileRoutes = require("./routes/pet-profiles")
+		petProfileRoutes = require("./routes/pet-profiles"),
+		apiRoutes = require("./routes/apis");
 
 mongoose.connect("mongodb://localhost/canine");
 app.use(bodyParser.urlencoded({extended: true}));
@@ -45,6 +46,7 @@ app.use(function(req, res, next){
 app.use(indexRoutes);
 app.use(profileRoutes);
 app.use(petProfileRoutes);
+app.use('/api/dogs', apiRoutes);
 
 app.get("*", function(req, res){
 	res.render("404");

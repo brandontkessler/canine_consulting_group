@@ -1,8 +1,7 @@
-<% include ./partials/header-home %>
+<% include ./partials/home/header-home %>
 
 <div class="jumbotron">
 	<div class="container">
-
 
 		<nav>
 			<div id="navbar-header" class="navbar-header">
@@ -17,6 +16,8 @@
 				<ul class="nav nav-pills navbar-right">
 					<% if(currentUser){ %>
 						<li><a href="/profile/<%= currentUser._id %>"><i class="fas fa-paw"></i></a></li>
+					<% } else { %>
+						<li><a href="/login">Login</a></li>
 					<% } %>
 				</ul>
 			</div>
@@ -30,22 +31,13 @@
 </div>
 
 <div class="home-label">
-	<div class="container">
-		<p>Welcome Mother Fuckers - Wendy Wang</p>
-		<% if(currentUser){ %>
-			<a href="/profile/<%= currentUser._id %>">Back to Hooman Paws</a>
-			<a href="/logout">Logout</a>
-		<% } else { %>
-			<a href="/register">Sign Up</a>
-			<a href="/login">Log In</a>
-		<% } %>
-	</div>
+	<a href="/register">GET STARTED</a>
 </div>
 
 
 <div class="item-container">
 	<div class="item item1">
-		<img class="item-image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Golden_Retriever_medium-to-light-coat.jpg/220px-Golden_Retriever_medium-to-light-coat.jpg">
+		<img class="item-image" src="https://i.imgur.com/bEaUHqB.jpg">
 		<h3>Cub School</h3>
 		<a href="/cub-school">
 			<i><img src="https://i.imgur.com/h3wrkij.png"></i>
@@ -74,4 +66,128 @@
 	</div>
 </div>
 
-<% include ./partials/footer %>
+<div class="team-container">
+	<h1 class="team-header">Meet the Team</h1>
+		<div class="teammate-container">
+			<div class="row">
+
+				<div class="teammate">
+					<div class="col-sm-2">
+						<img class="teammate-image" src="https://i.imgur.com/3DqUSj6.jpg">
+					</div>
+					<div class="col-sm-10">
+						<h3>Wendy</h3>
+						<h4>FOUNDER + DOG TRAINER</h4>
+						<div class="teammate-info">
+							<p id="wendy-info">
+								Since her childhood, Wendy has been immersed in the world of dog training,
+								wolf studies, dog shows, and canine behaviors. She has over a decade of experience
+								with dog behavior, health, and canine research (including research at UC Davis,
+								Yellowstone National Park, and zoology). Wendy uses the same teaching
+								methodology as Dr. Ian Dunbar, world-renowned dog behaviorist and veterinarian,
+								and hopes to close the rift in dog training methods by purely convincing the pet
+								parents to use a scientific methodology in training their dogs, relying on empathy,
+								respect, and open communication. The devotion and passion she has for pet care
+								goes beyond dogs, and it’s her personal mission to make sure her footprint leaves a
+								positive impact on all canine-human relationships. Her non-animal background
+								includes an extensive background in healthcare, business consulting, and analytics.
+								<p class="see-more-button-right" id="see-more-wendy">Read more</p>
+							</p>			
+						</div>
+					</div>
+				</div>
+
+				<div class="col-sm-12">
+					<hr class="teammate-separate">
+				</div>
+
+				<div class="teammate">
+					<div class="col-sm-10">
+						<div class="right">
+							<h3>Brandon</h3>
+							<h4>TECHNOLOGY + SOFTWARE DUDE</h4>
+						</div>
+						<div class="teammate-info">
+							<p id="brandon-info">
+								From Cocker Spaniels, to Rhodesian Ridgebacks, Brandon has never lived a
+								moment of his life without a canine companion. A native to Southern California,
+								Brandon has merged his business career development, and entrepreneurial
+								strategies to help the pet industry promote small businesses, especially in dog care.
+								In his free time, he can often be found with his new German Shepherd puppy at the
+								dog beach and hiking trails in his neighborhood. Brandon joined the CCG team
+								because he believes there’s a gap of business understanding in many dog loving
+								business owners, and he wants to successfully guide each business owner to their
+								full potential. His non-animal background includes coding, financial planning, and
+								senior level analytics.
+								<p class="see-more-button-left" id="see-more-brandon">Read more</p>
+							</p>			
+						</div>
+					</div>
+					<div class="col-sm-2">
+						<img class="teammate-image" src="https://i.imgur.com/3DqUSj6.jpg">
+					</div>
+				</div>
+
+				<div class="col-sm-12">
+					<hr class="teammate-separate">
+				</div>
+
+				<div class="teammate">
+					<div class="col-sm-2">
+						<img class="teammate-image" src="https://i.imgur.com/3DqUSj6.jpg">
+					</div>
+					<div class="col-sm-10">
+						<h3>Erika</h3>
+						<h4>EXECUTIVE COUNSELOR</h4>
+						<div class="teammate-info">
+							<p id="erika-info">
+								An unlikely partnership with CCG, Erika joined the team because she realized
+								that many personal relationships often have underlying issues that can come to light
+								when caring for a dog. Whether animals help aid as emotional support, service,
+								work and utility, or just as a companion, she will support each CCG member with
+								counseling and therapy. Her commitment is to be able to give a healthy mental
+								outreach outlet to each pet parent. Her non-animal background includes her
+								academic and professional training in education and family counseling, with
+								emphasis on clinical depression, generalized anxiety disorder, and autism spectrum
+								disorder.
+								<p class="see-more-button-right" id="see-more-erika">Read more</p>
+							</p>			
+						</div>
+					</div>
+				</div>
+
+				<div class="col-sm-12">
+					<hr class="teammate-separate">
+				</div>
+
+				<div class="teammate">
+					<div class="col-sm-10">
+						<div class="right">
+							<h3>Moira</h3>
+							<h4>EXECUTIVE RETAIL AND CUSTOMER SERVICE CONSULTANT</h4>
+						</div>
+						<div class="teammate-info">
+							<p id="moira-info">
+								With over 12 years of operations experience with business, Moira has always
+								wanted to combine her operation management experience with her passion of dogs.
+								Growing up in Miami, Florida, her family co-habits with their 5 poodles, and
+								currently she lives with her Rottweiler. Moira’s goal with CCG is to be able to easily
+								integrate pet care businesses with better and more profitable operating standards,
+								while cutting out waste that can take time away from the quality and customer
+								service of a business. In her free time, Moira can be found biking by the beach with
+								her dogs, or kayaking through the mangroves.
+								<p class="see-more-button-left" id="see-more-moira">Read more</p>
+							</p>			
+						</div>
+					</div>
+					<div class="col-sm-2">
+						<img class="teammate-image" src="https://i.imgur.com/3DqUSj6.jpg">
+					</div>
+				</div>
+
+			</div>
+		</div>
+</div>
+
+
+<% include ./partials/home/footer %>

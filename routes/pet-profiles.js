@@ -3,6 +3,7 @@ const 	express = require("express"),
 		passport = require("passport"),
 		imgur = require("imgur"),
 		multer = require("multer"),
+		moment = require("moment"),
 		fs = require("fs"),
 		path = require("path"),
 		middleware = require("../middleware"),
@@ -104,7 +105,8 @@ router.get("/profile/:id/pet-profiles/:petId", middleware.isLoggedIn, middleware
 			console.log(err);
 			res.redirect("/profile/" + req.user._id);
 		} else {
-			res.render("pet-profiles", {pet: foundPet});
+			let date = moment(foundPet.birthdate).format('MMMM-DD-YYYY');
+			res.render("pet-profiles", {pet: foundPet, petBirthDate: date});
 		}
 	});
 });

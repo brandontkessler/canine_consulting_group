@@ -1,3 +1,5 @@
+/* NON-TIFFANY BLUE: #77d2ca OR rgba(119, 210, 202, 1) */
+
 body {
 	font-family: 'Playfair Display', serif;
 }
@@ -19,7 +21,7 @@ nav a {
 	font-size: 2em;
 }
 
-/* HEADER */
+/********************************* HEADER ********************************************/
 .jumbotron {
 	height: 60vh;
 	background-image: url('https://i.imgur.com/uJVRYRK.jpg');
@@ -49,19 +51,27 @@ nav a {
 	color: white;
 }
 
-/* MID SECTION */
+/********************************** QUOTE MID SECTION ***************************************/
 .home-label {
 	text-align: center;
-	margin-bottom: 20px;
-	font-weight: bold;
-	font-size: 1.8em;
-	background-color: black;
-	color: white;
-	padding: 15vh 0;
-	margin: 0;
+	background-color: #77d2ca;
+	padding: 50px 0;
 }
 
-/* ITEM NAVIGATION */
+.home-label a{
+	color: white;
+	border: 1px solid white;
+	padding: 5px 10px;
+	font-size: 30px;
+	border-radius: 10px;
+}
+
+.home-label a:hover {
+	text-decoration: none;
+	opacity: 0.8;
+}
+
+/********************************* ITEM NAVIGATION *****************************************/
 .item-container {
 	display: flex;
 	justify-content: center;
@@ -77,7 +87,7 @@ nav a {
 
 .item .item-image {
 	min-width: 100%;
-	height: 500px;
+	height: 50vw;
 }
 
 .item3 .item-image{
@@ -95,6 +105,7 @@ nav a {
 	background-color: rgba(0, 0, 0, 0.8);
 	color: white;
 	margin: 0;
+	font-size: 2vw;
 }
 
 .item a{
@@ -160,7 +171,68 @@ nav a {
   transition: transform 300ms 100ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-/* MEDIA QUERIES FOR RESPONSIVENESS */
+
+/******************************** MEET THE TEAM ******************************************/
+.team-container {
+	width: 100%;
+	background-color: rgba(119, 210, 202, 1);
+}
+
+.team-header {
+	text-align: center;
+	color: white;
+	margin: 0;
+	padding-top: 50px;
+	font-family: 'Sacramento', cursive;
+	font-size: 100px;
+}
+
+.teammate-container {
+	position: relative;
+	display: block;
+	width: 80%;
+	margin: 20px auto 0 auto;
+	background-color: rgb(255, 255, 255, 0.7);
+	padding: 40px;
+	border-radius: 20px;
+}
+
+.teammate-separate {
+	border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.teammate-image {
+	object-fit: cover;
+	width: 100%;
+	height: calc(100vw - 60px - );
+	border-radius: 50%;
+}
+
+.teammate-info-content {
+	height: 60px;
+	overflow: hidden;
+	transition: height 1s ease-out;
+}
+
+.see-more-button-right {
+	float: right;
+	color: rgba(119, 210, 202, 1);
+	cursor: pointer;
+	font-weight: 700;
+}
+
+.see-more-button-left {
+	float: left;
+	color: rgba(119, 210, 202, 1);
+	cursor: pointer;
+	font-weight: 700;
+}
+
+.right {
+	text-align: right;
+}
+
+/********************************* MEDIA QUERIES FOR RESPONSIVENESS ****************************/
 @media screen and (max-width: 1200px){
 	.jumbotron h1{
 		font-size: 5em;
@@ -173,13 +245,13 @@ nav a {
 	}
 }
 
-@media screen and (max-width: 755px){
+@media screen and (max-width: 768px){
 	.jumbotron h1{
 		font-size: 4em;
 	}
 }
 
-@media screen and (max-width: 598px){
+@media screen and (max-width: 680px){
 	.jumbotron{
 		height:40vh;
 	}
@@ -191,6 +263,22 @@ nav a {
 	.jumbotron h1{
 		font-size: 3em;
 	}
+
+	.item-container {
+		flex-flow: row wrap;
+	}
+
+	.item-container .item {
+		min-width: 50%;
+		max-width: 50%;
+	}
+
+	.item-container .item .item-image {
+		width: 75%;
+		height: 75vw;
+	}
+
+	.item-container .item h3 {
+		font-size: 2.5vw;
+	}
 }
-
-

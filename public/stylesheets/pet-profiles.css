@@ -45,6 +45,7 @@ body{
 	list-style: none;
 	margin-bottom: 0;
 	padding-top: 5%;
+	padding-left: 0;
 	font-size: 3.5vw;
 	font-family: Rancho, cursive;
 	font-weight: bold;
@@ -65,4 +66,32 @@ body{
 
 .fun-facts h1 {
 	text-align: center;
+}
+
+@media screen and (max-width: 680px){
+	.pet-profile-info li {
+		font-size: 4vw;
+	}
+
+	.pet-profile-info li p {
+		font-size: 3vw;
+	}
+
+	.pet-profile-name {
+		margin-top: 10px;
+	}
+}
+
+@media screen and (max-width: 414px){
+	.pet-profile-info li {
+		font-size: 5vw;
+	}
+
+	.pet-profile-info li p {
+		font-size: 4vw;
+	}
+
+	.pet-profile-name {
+		margin-top: 5px;
+	}
 }
