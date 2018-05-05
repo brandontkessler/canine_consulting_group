@@ -1,59 +1,67 @@
-// SEE MORE BUTTON ON HOMEPAGE
-$(document).ready(function(){
-	const wendyHeight = $('#wendy-info').height(),
-		  brandonHeight = $('#brandon-info').height(),
-		  erikaHeight = $('#erika-info').height(),
-		  moiraHeight = $('#moira-info').height();
+(function(code){
+	code(window.jQuery, window, document);
+}(function($, window, document){
+	$(function(){
+		// The DOM is ready
+	});
 
-	$('#wendy-info, #brandon-info, #erika-info, #moira-info').addClass('teammate-info-content');
+// ************************************* MEET THE TEAM ****************************************
 
-	$('#see-more-wendy').on('click', function(){
-		let height = $('#wendy-info').height();
-		if(height === 60) {
-			$('#wendy-info').css({'transition': 'height 0.5s ease-out', 'height': wendyHeight});
-			$('#see-more-wendy').text('Read less');
+	let wendyInfo = $('#wendy-info'),
+		brandonInfo = $('#brandon-info'),
+		erikaInfo = $('#erika-info'),
+		moiraInfo = $('#moira-info'),
+		teammateInfo = $('.teammate-info');
+	// on ready, store the initial height of the teammate description
+	const wendyHeight = wendyInfo.height(),
+		  brandonHeight = brandonInfo.height(),
+		  erikaHeight = erikaInfo.height(),
+		  moiraHeight = moiraInfo.height(),
+		  // Store teammate ID: height as an object
+		  teammateObject = {
+		  	'wendy-info': {
+		  		accessDOM: wendyInfo,
+		  		'see-more-wendy': wendyHeight
+		  	},
+		  	'brandon-info': {
+		  		accessDOM: brandonInfo,
+		  		'see-more-brandon': brandonHeight
+		  	},
+		  	'erika-info': {
+		  		accessDOM: erikaInfo,
+		  		'see-more-erika': erikaHeight
+		  	},
+			'moira-info': {
+				accessDOM: moiraInfo,
+				'see-more-moira': moiraHeight
+			}
+		  };
+
+	let teamArray = [wendyInfo, brandonInfo, erikaInfo, moiraInfo];
+	// On ready, add the teammate-info-content class to shrink the description height to 60px lines
+	$.each(teamArray, (index, member) => member.addClass('teammate-info-content'));
+
+	teammateInfo.on('click', '.see-more', function(){
+		let seeMoreId = $(this).attr('id'),
+			thisParentId = $(this).parent().children('p').attr('id'),
+			thisParentObj = teammateObject[thisParentId],
+			parentDOM = thisParentObj.accessDOM,
+			transitionMore = {'transition': 'height 0.5s ease-out', 'height': thisParentObj[seeMoreId]},
+			transitionLess = {'transition': 'height 0.5s ease-out', 'height': '60px'};
+
+		if(parentDOM.height() === 60){
+			parentDOM.css(transitionMore);
+			$(this).text('Read less')
 		} else {
-			$('#wendy-info').css({'transition': 'height 0.5s ease-out', 'height': '60px'});
-			$('#see-more-wendy').text('Read more');
+			parentDOM.css(transitionLess);
+			$(this).text('Read more')
 		}
 	});
 
-	$('#see-more-brandon').on('click', function(){
-		let height = $('#brandon-info').height();
-		if(height === 60) {
-			$('#brandon-info').css({'transition': 'height 0.5s ease-out', 'height': brandonHeight});
-			$('#see-more-brandon').text('Read less');
-		} else {
-			$('#brandon-info').css({'transition': 'height 0.5s ease-out', 'height': '60px'});
-			$('#see-more-brandon').text('Read more');
-		}
+// ************************************* ITEM CLICKS ****************************************
+	// MAKE ENTIRE ITEM DIV ON HOMEPAGE CLICKABLE
+	$(".item").on("click", function(){
+		window.location.href = $(this).find("a").attr("href");
 	});
 
-	$('#see-more-erika').on('click', function(){
-		let height = $('#erika-info').height();
-		if(height === 60) {
-			$('#erika-info').css({'transition': 'height 0.5s ease-out', 'height': erikaHeight});
-			$('#see-more-erika').text('Read less');
-		} else {
-			$('#erika-info').css({'transition': 'height 0.5s ease-out', 'height': '60px'});
-			$('#see-more-erika').text('Read more');
-		}
-	});
-
-	$('#see-more-moira').on('click', function(){
-		let height = $('#moira-info').height();
-		if(height === 60) {
-			$('#moira-info').css({'transition': 'height 0.5s ease-out', 'height': moiraHeight});
-			$('#see-more-moira').text('Read less');
-		} else {
-			$('#moira-info').css({'transition': 'height 0.5s ease-out', 'height': '60px'});
-			$('#see-more-moira').text('Read more');
-		}
-	});
-});
-
-
-// MAKE ENTIRE ITEM DIV ON HOMEPAGE CLICKABLE
-$(".item").on("click", function(){
-	window.location.href = $(this).find("a").attr("href");
-});
+}))

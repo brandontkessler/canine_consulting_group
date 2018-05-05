@@ -55,31 +55,14 @@ router.get("/cub-school", function(req, res){
 });
 
 // Health and Wellness
+router.get("/health", function(req, res){
+	res.render("home-categories/health");
+});
+
 
 // Food
 router.get("/food", function(req, res){
 	res.render("home-categories/food")
 });
-
-router.get("/food/dry", function(req, res){
-	res.render("home-categories/food/dry");
-});
-
-router.get("/food/wet", function(req, res){
-	res.render("home-categories/food/wet");
-});
-
-router.get("/food/raw", function(req, res){
-	res.render("home-categories/food/raw");
-});
-
-router.get("/food/freeze-dried", function(req, res){
-	res.render("home-categories/food/freeze-dried");
-});
-
-router.get("/food/treats", function(req, res){
-	res.render("home-categories/food/treats");
-});
-
 
 module.exports = router;

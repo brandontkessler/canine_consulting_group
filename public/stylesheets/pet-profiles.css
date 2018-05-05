@@ -22,7 +22,6 @@ body{
 .pet-profile-border{
 	background-color: rgb(255, 255, 255, 0.7);
 	border-radius: 15px;
-
 }
 
 .pet-profile-name {
@@ -32,6 +31,8 @@ body{
 	transform: translate(-50%, -50%);
 	font-size: 9vw;
 	font-family: 'Gochi Hand', cursive;
+	color: black;
+	margin-top: 20px;
 }
 
 .pet-profile-pic {
@@ -66,6 +67,7 @@ body{
 
 .fun-facts h1 {
 	text-align: center;
+	color: black;
 }
 
 @media screen and (max-width: 680px){

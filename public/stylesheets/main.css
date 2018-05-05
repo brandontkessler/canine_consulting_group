@@ -1,17 +1,61 @@
+/* NON-TIFFANY BLUE: #77d2ca OR rgba(119, 210, 202, 1) */
+
 body {
 	font-family: 'Playfair Display', serif;
-	overflow: scroll;
+	overflow-y: scroll;
 }
 
 .navbar {
+	background-color: rgba(119, 210, 202, 1);
 	font-weight: bold;
+	margin: 0;
 }
 
-.jumbotron {
+.navbar-toggle .icon-bar {
+	background-color: white;
+}
+
+#navbar-header .navbar-brand{
+	color: white;
+}
+
+#navbar-header .navbar-brand:hover {
+	color: rgba(119, 210, 202, 1);
+	background-color: white;
+}
+
+#nav-collapse ul li a {
+	color: white;
+}
+
+#nav-collapse ul li a:hover {
+	color: rgba(119, 210, 202, 1);
+	background-color: white;
+}
+
+h1 {
+	margin-top: 30px;
 	text-align: center;
+	color: white;
+	font-family: Sacramento;
+	font-size: 9vw;
+}
+
+/*********************************** CUB SCHOOL *******************************************/
+
+#package-container {
+	background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('https://i.imgur.com/GIc4hZ7.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: top left;
+	height: 1000px;
+	overflow: hidden;
+	overflow-y: auto;
+	opacity: 0.9;
 }
 
 #package-container ul {
+	margin-top: 50px;
 	list-style-type: none;
 }
 
@@ -21,7 +65,7 @@ body {
 	padding: 0;
 	margin: 0 auto;
 	border-radius: 10px;
-	background-color: #eee;
+	background-color: rgba(238, 238, 238, 0.8);
 }
 
 .package-separate {
@@ -33,6 +77,8 @@ body {
 }
 
 ul .package-list h3 {
+	font-size: 2.5vw;
+	text-align: center;
 	padding: 20px 0 20px 50px;
 	margin: 0;
 }
@@ -42,7 +88,7 @@ ul .package-list h3 {
 }
 
 .package-list:hover h3 {
-	transform-origin: left;
+	transform-origin: center;
 	transform: scale(1.1) translate(1px);
 	transition: transform .1s ease-out 20ms;
 }
@@ -75,7 +121,8 @@ ul .package-list h3 {
 	margin-right: 30px;
 }
 
-#therapist-embedded-list {
+ul#therapist-embedded-list {
+	margin-top: 0;
 	padding: 0;
 	font-size: 13px;
 }
@@ -98,11 +145,15 @@ svg.svg-inline--fa.fa-circle.fa-w-16{
 
 @media screen and (max-width: 767px){
 
-	.package-list-container h3 {
+	ul .package-list h3 {
+		font-size: 4vw;
+	}
+
+	.package-dropdown ul li {
 		font-size: 3vw;
 	}
 
-	.package-list:hover h3 {
+	ul .package-list:hover h3 {
 		transform-origin: left;
 		transform: scale(1) translate(0px);
 		transition-property: none;
@@ -110,7 +161,7 @@ svg.svg-inline--fa.fa-circle.fa-w-16{
 }
 
 @media screen and (max-width: 440px) {
-	.package-list-container h3 {
+	.package-list h3 {
 		font-size: 4vw;
 	}
 
@@ -119,6 +170,130 @@ svg.svg-inline--fa.fa-circle.fa-w-16{
 	}
 }
 
+/*********************************** HEALTH *******************************************/
+#health-page {
+	background-color: #5472a3;
+	height: 1000px;
+}
+
+#health-page .row {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+#health h3 {
+	color: white;
+}
+
+#health ul {
+	list-style: none;
+	padding-left: 0;
+}
+
+#health ul li {
+	border: solid 1px white;
+	cursor: pointer;
+	color: white;
+	padding: 3px;
+	border-radius: 4px;
+	margin-bottom: 5px;
+}
+
+#age-list, #breed-list, #activity-list, #financial-list, #medical-list {
+	display: none;
+}
+
+.care-info {
+	border: solid 1px white;
+	border-radius: 10px;
+	padding: 10px;
+}
+
+.care-info img {
+	width: 100px;
+	border-radius: 50px;
+}
+
+.care-info h4, .care-info p {
+	color: white;
+}
+
+#brachycephalic {
+	display: none;
+}
 
 
+/*********************************** FOOD *******************************************/
+#food-page {
+	background-color: #5472a3;
+}
 
+.container {
+	margin-top: 50px;
+}
+
+.header-tabs {
+	display: table;
+	margin: 0 auto;
+}
+
+.header-tabs h4 {
+	color: white;
+	font-size: 2vw;
+	display: inline;
+	float: left;
+	border-top: solid 1px white;
+	border-right: solid 1px white;
+	border-left: solid 1px white;
+	margin: 0 5px;
+	padding: 5px;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.food-content {
+	border: 1px solid white;
+	border-radius: 10px;
+	padding: 15px;
+	width: 80%;
+	margin: 0 auto;
+}
+
+.food-content-list {
+	list-style: none;
+	padding: 0;
+}
+
+.individual-food-container h5 {
+	color: white;
+	font-size: 2.5vw;
+}
+
+.individual-food-container p {
+	color: white;
+	font-size: 1.5vw;
+}
+
+.individual-food-container a {
+	color: white;
+	text-decoration: none;
+}
+
+.food-image {
+	width: 100%;
+	border-radius: 50%;
+}
+
+.food-icon-container {
+	margin-top: 2vw;
+}
+
+.food-icon {
+	width: 20%;
+	margin: 5px;
+}
+
+/* HIDE DROPDOWNS */
+#content-40-60, #content-60-80 {
+	display: none;
+}
