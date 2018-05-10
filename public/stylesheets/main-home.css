@@ -102,8 +102,8 @@ nav a {
 	text-align: center;
 	font-weight: 700;
 	padding: 15px 0;
-	background-color: rgba(0, 0, 0, 0.8);
-	color: white;
+	background-color: rgba(255, 255, 255, 0.85);
+	color: rgba(119, 210, 202, 1);
 	margin: 0;
 	font-size: 2vw;
 }
@@ -139,7 +139,7 @@ nav a {
 
 /* HEALTH AND WELLNESS */
 .item2 {
-	background-color: white;
+	background-color: rgba(119, 210, 202, 1);
 }
 
 /* FOOD */
@@ -149,7 +149,7 @@ nav a {
 
 /* CUB SOCIAL */
 .item4 {
-	background-color: white;
+	background-color: rgba(119, 210, 202, 1);
 }
 
 
@@ -169,6 +169,18 @@ nav a {
 .item:hover a {
   transform: translate(-50%, -50%) scale(1);
   transition: transform 300ms 100ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+
+/******************************** MEET THE TEAM ******************************************/
+#breed-container .breed-standard {
+	width: 40%;
+	float: left;
+}
+
+#breed-container .breed-irl {
+	width: 80%;
+	border-radius: 5%;
 }
 
 

@@ -7,6 +7,8 @@ const 	express = require("express"),
 		methodOverride = require("method-override"),
 		User = require("./models/user");
 
+const port = process.env.PORT || 3000;
+
 require("dotenv").config();
 
 // Required Routes
@@ -15,7 +17,9 @@ const	indexRoutes = require("./routes/index"),
 		petProfileRoutes = require("./routes/pet-profiles"),
 		apiRoutes = require("./routes/apis");
 
-mongoose.connect("mongodb://localhost/canine");
+
+const mongoUrl = process.env.MONGODB_URI || "mongodb://localhost/canine";
+mongoose.connect(mongoUrl);
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
@@ -52,6 +56,7 @@ app.get("*", function(req, res){
 	res.render("404");
 });
 
-app.listen(3000, 'localhost', function(){
-	console.log("Canine Server On");
+
+app.listen(port , function(){
+	console.log("Canine Server On: " + port);
 });

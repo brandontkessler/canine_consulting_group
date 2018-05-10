@@ -58,11 +58,33 @@ router.get("/cub-school", function(req, res){
 router.get("/health", function(req, res){
 	res.render("home-categories/health");
 });
+router.get("/health/fleas_ticks_heartworms", function(req, res){
+	res.render("home-categories/fleas-ticks-heartworms");
+});
+router.get("/health/allergies", function(req, res){
+	res.render("home-categories/allergies");
+});
+router.get("/health/eyes_ears_teeth", function(req, res){
+	res.render("home-categories/eyes-ears-teeth");
+});
+router.get("/health/vaccinations_dewormers", function(req, res){
+	res.render("home-categories/vaccinations-dewormers");
+});
 
 
 // Food
 router.get("/food", function(req, res){
 	res.render("home-categories/food")
+});
+
+// Cub Social
+router.get("/cub-social", function(req, res){
+	res.render("home-categories/cub-social");
+});
+
+// Puppy Town
+router.get("/puppytown", function(req, res){
+	res.render("home-categories/puppy-town");
 });
 
 module.exports = router;

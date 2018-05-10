@@ -176,51 +176,26 @@ svg.svg-inline--fa.fa-circle.fa-w-16{
 	height: 1000px;
 }
 
-#health-page .row {
-	margin-left: 0;
-	margin-right: 0;
+.health-wrapper {
+	overflow: hidden;
+	width: 80%;
+	margin: 50px auto 0 auto;
+	display: block;
 }
 
-#health h3 {
-	color: white;
+.health-topic {
+	float: left;
+	width: 20%;
+	margin-left: 5%;
+
 }
 
-#health ul {
-	list-style: none;
-	padding-left: 0;
+.health-topic-image {
+	width: 100%;
+	border-radius: 50%;
 }
 
-#health ul li {
-	border: solid 1px white;
-	cursor: pointer;
-	color: white;
-	padding: 3px;
-	border-radius: 4px;
-	margin-bottom: 5px;
-}
 
-#age-list, #breed-list, #activity-list, #financial-list, #medical-list {
-	display: none;
-}
-
-.care-info {
-	border: solid 1px white;
-	border-radius: 10px;
-	padding: 10px;
-}
-
-.care-info img {
-	width: 100px;
-	border-radius: 50px;
-}
-
-.care-info h4, .care-info p {
-	color: white;
-}
-
-#brachycephalic {
-	display: none;
-}
 
 
 /*********************************** FOOD *******************************************/
@@ -228,7 +203,17 @@ svg.svg-inline--fa.fa-circle.fa-w-16{
 	background-color: #5472a3;
 }
 
-.container {
+.blurb {
+	width: 70%;
+	margin: 0 auto;
+}
+
+.blurb p {
+	color: white;
+
+}
+
+.food-page-content {
 	margin-top: 50px;
 }
 
@@ -297,3 +282,180 @@ svg.svg-inline--fa.fa-circle.fa-w-16{
 #content-40-60, #content-60-80 {
 	display: none;
 }
+
+/************************************ CUB SOCIAL ***************************************/
+#cub-social-page {
+	background-color: #5472a3;
+	min-height: 800px;
+}
+
+#cub-social-content h2{
+	text-align: center;
+	font-size: 3.5vw;
+	color: white;
+	margin: 10px 0 0 0;
+}
+
+.sidebar-container {
+	border: 1px solid black;
+	border-radius: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 20px;
+	height: 70vh;
+}
+
+.sidebar-container ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.main-container {
+	padding: 0;
+}
+
+.towns-top-row {
+	overflow: hidden;
+}
+
+.towns-top-row a {
+	width: 20%;
+	float: left;
+	margin: 0 2.5%;
+}
+
+.towns-top-row img {
+	width: 100%;
+	border-radius: 50%;
+}
+
+.towns-middle-row {
+	overflow: hidden;
+}
+
+.towns-middle-row a {
+	width: 20%;
+	float: left;
+}
+
+.towns-middle-row a:nth-child(1) {
+	margin-left: 15.55555555%;
+}
+
+.towns-middle-row a:nth-child(2) {
+	margin: 0 4.44444444%;
+}
+
+.towns-middle-row a:nth-child(3) {
+	margin-right: 15.55555555%;
+}
+
+
+.towns-middle-row img {
+	width: 100%;
+	border-radius: 50%;
+}
+
+.towns-bottom-row {
+	overflow: hidden;
+}
+
+.towns-bottom-row a {
+	width: 20%;
+	float: left;
+}
+
+.towns-bottom-row a:nth-child(1) {
+	margin-left: 27.7777777%;
+	margin-right: 2.2222222%;
+}
+
+.towns-bottom-row a:nth-child(2) {
+	margin-left: 2.2222222%;
+	margin-right: 27.7777777%;  
+}
+
+.towns-bottom-row img {
+	width: 100%;
+	border-radius: 50%;
+}
+
+.social-extras div {
+	padding: 0;
+}
+
+.social-extras div div {
+	width: 85%;
+	border: 1px solid black;
+	border-radius: 10px;
+	min-height: 300px;
+	margin: 0 auto;
+	padding: 0;
+}
+
+.social-extras h3 {
+	text-align: center;
+}
+
+/**************************************** 404 ***************************************/
+.body404 {
+	background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('https://i.imgur.com/ZuZ6mi6.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: top left;
+	height: 1500px;
+	overflow: hidden;
+	overflow-y: auto;
+	opacity: 0.9;
+}
+
+.header404 {
+	font-family: Schoolbell, cursive;
+	color: rgba(119, 210, 202, 1);
+}
+
+/*********************************** PUPPY TOWN *******************************************/
+#puppy-town-page {
+	background-color: #5472a3;
+}
+
+.puppy-page-content {
+	margin-top: 50px;
+}
+
+/* HEADER TABS ARE USING SAME CLASSES AS FOOD PAGE */
+
+.puppy-content {
+	border: 1px solid white;
+	border-radius: 10px;
+	padding: 15px;
+	width: 80%;
+	margin: 0 auto;
+}
+
+
+.individual-puppy-container h5 {
+	color: white;
+	font-size: 2.5vw;
+}
+
+.individual-puppy-container p {
+	color: white;
+	font-size: 1.5vw;
+}
+
+.individual-puppy-container a {
+	color: white;
+	text-decoration: none;
+}
+
+/* HIDE DROPDOWNS */
+#content-have-puppy {
+	display: none;
+}
+
+
+
+
+
